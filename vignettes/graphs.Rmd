@@ -1,0 +1,22 @@
+---
+title: "Some graphs from the package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Some graphs from the package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(SwissMacroData)
+x <- swissmacrodata()
+ggplot2::ggplot(data=x) +
+  ggplot2::geom_line(ggplot2::aes(x=as.Date(date),y=value,color=adjustments))
+```
